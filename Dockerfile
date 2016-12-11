@@ -1,13 +1,21 @@
 FROM debian:jessie
-MAINTAINER Aexea Carpentry
+MAINTAINER Julian Liebl
 
-RUN apt-get update && apt-get install -y wget openjdk-7-jre-headless binutils mongodb-server jsvc unzip
-RUN mkdir -p /opt
-WORKDIR /opt
-RUN wget https://www.ubnt.com/downloads/unifi/4.8.15/UniFi.unix.zip
-RUN unzip UniFi.unix.zip
+RUN apt-get update && apt-get install -y \
+    wget \
+    openjdk-7-jre-headless \
+    binutils \
+    mongodb-server \
+    jsvc \
+    unzip \
+    && mkdir /opt && cd /opt \
+    && wget https://www.ubnt.com/downloads/unifi/5.2.9/UniFi.unix.zip \
+    && unzip UniFi.unix.zip \
+    && apt-get remove -y wget unzip \
+    && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /opt/UniFi
 
-EXPOSE 8443 8080
+EXPOSE 3478 8080 8081 8443 8843 8880
 
 CMD ["java", "-jar", "lib/ace.jar", "start"]
