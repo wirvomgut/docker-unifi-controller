@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
     mongodb-server \
     jsvc \
     unzip \
-    && mkdir /opt && cd /opt \
+    && mkdir -p /opt && cd /opt \
     && wget https://www.ubnt.com/downloads/unifi/5.3.8/UniFi.unix.zip \
     && unzip UniFi.unix.zip \
     && apt-get remove -y wget unzip \
