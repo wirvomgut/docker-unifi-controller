@@ -1,0 +1,14 @@
+version: '2'
+services:
+  srv:
+    image: wirvomgut/docker-unifi-controller:5.4.8
+    network_mode: host
+    ports: #actually not needed because network mode is set to host
+    - 8080:8080/tcp
+    - 8081:8081/tcp
+    - 8443:8443/tcp
+    - 8843:8843/tcp
+    - 8880:8880/tcp
+    - 3478:3478/udp
+    volumes:
+    - ./config/data:/opt/UniFi/data
