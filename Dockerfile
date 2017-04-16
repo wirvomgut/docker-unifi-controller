@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     jsvc \
     unzip \
     && mkdir -p /opt && cd /opt \
-    && wget https://www.ubnt.com/downloads/unifi/5.4.8-0418fa4d79/UniFi.unix.zip \
+    && wget https://www.ubnt.com/downloads/unifi/5.4.14/UniFi.unix.zip \
     && unzip UniFi.unix.zip \
     && apt-get remove -y wget unzip \
     && rm -rf /var/lib/apt/lists/*

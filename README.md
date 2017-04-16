@@ -3,7 +3,7 @@
 ## Run it
 
 ```
-docker run -d --net=host -v /opt/UniFi/data:/opt/Unifi/data aexea/unifi-controller
+docker run -d --net=host -v /opt/UniFi/data:/opt/Unifi/data wirvomgut/unifi-controller
 ```
 
 This runs the container from docker hub and mounts the data directory on the host system for data persitence. 
@@ -15,7 +15,7 @@ It also uses `--net=host` which allows the controller to map any port to public.
 version: '2'
 services:
   srv:
-    image: wirvomgut/docker-unifi-controller:5.4.8
+    image: wirvomgut/docker-unifi-controller:5.4.14
     network_mode: host
     ports: #actually not needed because network mode is set to host
     - 8080:8080/tcp
