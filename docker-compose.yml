@@ -1,7 +1,7 @@
 version: '2'
 services:
   srv:
-    image: wirvomgut/docker-unifi-controller:5.4.14
+    image: wirvomgut/docker-unifi-controller:5.4.16
     network_mode: host
     ports: #actually not needed because network mode is set to host
     - 8080:8080/tcp
