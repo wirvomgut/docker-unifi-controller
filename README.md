@@ -15,7 +15,7 @@ It also uses `--net=host` which allows the controller to map any port to public.
 version: '2'
 services:
   srv:
-    image: wirvomgut/docker-unifi-controller:5.6.16
+    image: wirvomgut/docker-unifi-controller:5.6.20
     network_mode: host
     ports: #actually not needed because network mode is set to host
     - 8080:8080/tcp
